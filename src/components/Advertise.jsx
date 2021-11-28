@@ -6,11 +6,13 @@ function Advertise(props) {
   const [slideIndex, setSlideIndex] = useState(0);
   const slides = useRef([]);
   const dots = useRef([]);
+  const slideDoms = slides.current;
+  const dotsDoms = dots.current;
 
   const listImages = images.map((image, i) => (
     <img
       ref={(element) => {
-        slides.current[i] = element;
+        slideDoms[i] = element;
       }}
       className="slide"
       src={image}
@@ -21,7 +23,7 @@ function Advertise(props) {
   const listDots = images.map((image, i) => (
     <div
       ref={(element) => {
-        dots.current[i] = element;
+        dotsDoms[i] = element;
       }}
       className="dot"
       onClick={() => {
@@ -32,8 +34,6 @@ function Advertise(props) {
   ));
 
   useEffect(() => {
-    const slideDoms = slides.current;
-    const dotsDoms = dots.current;
     for (let i = 0; i < slideDoms.length; i++) {
       slideDoms[i].style.display = "none";
     }
@@ -58,8 +58,7 @@ function Advertise(props) {
       <div
         className="next"
         onClick={() => {
-          slideIndex !== slides.current.length - 1 &&
-            setSlideIndex(slideIndex + 1);
+          slideIndex !== slideDoms.length - 1 && setSlideIndex(slideIndex + 1);
         }}
       >
         &#10095;

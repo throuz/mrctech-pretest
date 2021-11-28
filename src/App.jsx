@@ -2,6 +2,7 @@ import "./App.css";
 // import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Advertise from "./components/Advertise";
+import Countdown from "./components/Countdown";
 import data from "./data.json";
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
     <div className="App">
       <Header></Header>
       <Advertise images={images}></Advertise>
+      <Countdown></Countdown>
     </div>
   );
 }
