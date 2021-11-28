@@ -2,10 +2,11 @@ import "./Categories.css";
 
 function Categories(props) {
   const categories = [
-    "electronics",
-    "jewelery",
-    "men's clothing",
-    "women's clothing",
+    "All",
+    "Electronics",
+    "Jewelery",
+    "Men's clothing",
+    "Women's clothing",
   ];
 
   const listCategories = categories.map((category, i) => (

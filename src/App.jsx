@@ -60,13 +60,34 @@ function App() {
     images.push(data[i].image);
   }
 
+  const SearchFilter = (e) => {
+    const searchValue = e.target.value.toLowerCase();
+
+    setProducts(
+      data.filter(
+        (product) =>
+          product.title.toLowerCase().includes(searchValue) ||
+          product.description.toLowerCase().includes(searchValue)
+      )
+    );
+  };
+
   const categoryFilter = (category) => {
-    setProducts(data.filter((product) => product.category === category));
+    if (category === "All") {
+      setProducts(data);
+    } else {
+      setProducts(
+        data.filter((product) => product.category === category.toLowerCase())
+      );
+    }
   };
 
   return (
     <div className="App">
-      <Header></Header>
+      <Header
+        SearchFilter={SearchFilter}
+        categoryFilter={categoryFilter}
+      ></Header>
       <Advertise images={images}></Advertise>
       <Countdown></Countdown>
       <ProductList products={products}></ProductList>
