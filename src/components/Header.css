@@ -18,15 +18,16 @@ header {
 }
 
 #search-input {
-  width: 80%;
+  width: 100%;
   font-size: 20px;
-  padding: 5px 30px 5px 30px;
+  padding: 5px 30px;
+  box-sizing: border-box;
 }
 
 #clear-btn {
   position: absolute;
   top: 50%;
-  right: 18%;
+  right: 40px;
   transform: translateY(-50%);
   cursor: pointer;
 }

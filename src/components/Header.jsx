@@ -1,8 +1,8 @@
-import "./SearchBar.css";
+import "./Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
-function SearchBar(props) {
+function Header(props) {
   return (
     <header>
       <div id="search-bar">
@@ -14,4 +14,4 @@ function SearchBar(props) {
   );
 }
 
-export default SearchBar;
+export default Header;
