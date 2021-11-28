@@ -3,12 +3,13 @@ import "./App.css";
 import Header from "./components/Header";
 import Advertise from "./components/Advertise";
 import Countdown from "./components/Countdown";
-import data from "./data.json";
+import ProductList from "./components/ProductList";
+import products from "./data.json";
 
 function App() {
   // const [error, setError] = useState(null);
   // const [isLoaded, setIsLoaded] = useState(false);
-  // const [items, setItems] = useState([]);
+  // const [products, setProducts] = useState([]);
   // const [images, setImages] = useState([]);
 
   // useEffect(() => {
@@ -17,7 +18,7 @@ function App() {
   //     .then(
   //       (result) => {
   //         setIsLoaded(true);
-  //         setItems(result);
+  //         setProducts(result);
 
   //         const images = [];
   //         for (let i = 0; i < result.length; i++) {
@@ -49,18 +50,21 @@ function App() {
   // }
 
   const images = [];
-  for (let i = 0; i < data.length; i++) {
+  for (let i = 0; i < products.length; i++) {
     if (i > 9) {
       break;
     }
-    images.push(data[i].image);
+    images.push(products[i].image);
   }
+
+  console.log(products);
 
   return (
     <div className="App">
       <Header></Header>
       <Advertise images={images}></Advertise>
       <Countdown></Countdown>
+      <ProductList products={products}></ProductList>
     </div>
   );
 }
