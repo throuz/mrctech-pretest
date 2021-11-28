@@ -22,14 +22,14 @@ function App() {
           setProductsData(result);
           setProducts(result);
 
-          const images = [];
+          const imageUrls = [];
           for (let i = 0; i < result.length; i++) {
             if (i > 9) {
               break;
             }
-            images.push(result[i].image);
+            imageUrls.push(result[i].image);
           }
-          setImages(images);
+          setImages(imageUrls);
           setIsLoaded(true);
         },
         (error) => {
