@@ -57,8 +57,6 @@ function App() {
     images.push(products[i].image);
   }
 
-  console.log(products);
-
   return (
     <div className="App">
       <Header></Header>
