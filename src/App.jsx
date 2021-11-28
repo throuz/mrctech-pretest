@@ -5,6 +5,7 @@ import Advertise from "./components/Advertise";
 import Countdown from "./components/Countdown";
 import ProductList from "./components/ProductList";
 import Categories from "./components/Categories";
+import GoTop from "./components/GoTop";
 import data from "./data.json";
 
 function App() {
@@ -70,6 +71,7 @@ function App() {
       <Countdown></Countdown>
       <ProductList products={products}></ProductList>
       <Categories categoryFilter={categoryFilter}></Categories>
+      <GoTop></GoTop>
     </div>
   );
 }
