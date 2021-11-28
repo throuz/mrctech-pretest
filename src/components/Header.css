@@ -2,14 +2,15 @@ header {
   width: 100%;
   background: #999;
   padding: 20px;
+  box-sizing: border-box;
 }
 
-#search-bar {
+.search-bar {
   position: relative;
   padding-right: 30px;
 }
 
-#search-btn {
+.search-btn {
   position: absolute;
   top: 50%;
   left: 10px;
@@ -17,14 +18,14 @@ header {
   cursor: pointer;
 }
 
-#search-input {
+.search-input {
   width: 100%;
   font-size: 20px;
   padding: 5px 30px;
   box-sizing: border-box;
 }
 
-#clear-btn {
+.clear-btn {
   position: absolute;
   top: 50%;
   right: 40px;

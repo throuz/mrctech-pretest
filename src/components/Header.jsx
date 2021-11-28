@@ -5,10 +5,10 @@ import { faSearch, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 function Header(props) {
   return (
     <header>
-      <div id="search-bar">
-        <FontAwesomeIcon icon={faSearch} id="search-btn" />
-        <input type="text" id="search-input" />
-        <FontAwesomeIcon icon={faTimesCircle} id="clear-btn" />
+      <div className="search-bar">
+        <FontAwesomeIcon icon={faSearch} className="search-btn" />
+        <input type="text" className="search-input" />
+        <FontAwesomeIcon icon={faTimesCircle} className="clear-btn" />
       </div>
     </header>
   );
