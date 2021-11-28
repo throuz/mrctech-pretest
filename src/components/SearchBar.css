@@ -1,0 +1,32 @@
+header {
+  width: 100%;
+  background: #999;
+  padding: 20px;
+}
+
+#search-bar {
+  position: relative;
+  padding-right: 30px;
+}
+
+#search-btn {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+#search-input {
+  width: 80%;
+  font-size: 20px;
+  padding: 5px 30px 5px 30px;
+}
+
+#clear-btn {
+  position: absolute;
+  top: 50%;
+  right: 18%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
