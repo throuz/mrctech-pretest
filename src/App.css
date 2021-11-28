@@ -6,3 +6,11 @@ html {
   width: 70%;
   margin: 0 auto;
 }
+
+.abnormal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+}
