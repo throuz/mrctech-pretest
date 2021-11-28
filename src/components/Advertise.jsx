@@ -1,19 +1,70 @@
 import "./Advertise.css";
+import { useState, useEffect, useRef } from "react";
 
 function Advertise(props) {
+  const { images } = props;
+  const [slideIndex, setSlideIndex] = useState(0);
+  const slides = useRef([]);
+  const dots = useRef([]);
+
+  const listImages = images.map((image, i) => (
+    <img
+      ref={(element) => {
+        slides.current[i] = element;
+      }}
+      className="slide"
+      src={image}
+      key={i}
+    />
+  ));
+
+  const listDots = images.map((image, i) => (
+    <div
+      ref={(element) => {
+        dots.current[i] = element;
+      }}
+      className="dot"
+      onClick={() => {
+        setSlideIndex(i);
+      }}
+      key={i}
+    ></div>
+  ));
+
+  useEffect(() => {
+    const slideDoms = slides.current;
+    const dotsDoms = dots.current;
+    for (let i = 0; i < slideDoms.length; i++) {
+      slideDoms[i].style.display = "none";
+    }
+    for (let i = 0; i < dotsDoms.length; i++) {
+      dotsDoms[i].className = dotsDoms[i].className.replace(" active", "");
+    }
+    slideDoms[slideIndex].style.display = "block";
+    dotsDoms[slideIndex].className += " active";
+  }, [slideIndex]);
+
   return (
     <section id="advertise">
-      <img
-        className="slides fade"
-        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/collage-1634625747.jpg?crop=0.487xw:0.974xh;0.00489xw,0.0163xh&resize=640:*"
-      />
-      <div className="prev">&#10094;</div>
-      <div className="next">&#10095;</div>
-      <div className="dot-group">
-        <div className="dot"></div>
-        <div className="dot"></div>
-        <div className="dot"></div>
+      {listImages}
+      <div
+        className="prev"
+        onClick={() => {
+          slideIndex !== 0 && setSlideIndex(slideIndex - 1);
+        }}
+      >
+        &#10094;
       </div>
+      <div
+        className="next"
+        onClick={() => {
+          slideIndex !== slides.current.length - 1 &&
+            setSlideIndex(slideIndex + 1);
+        }}
+      >
+        &#10095;
+      </div>
+      <div className="dot-group">{listDots}</div>
     </section>
   );
 }
