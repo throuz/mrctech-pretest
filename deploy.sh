@@ -4,7 +4,7 @@
 set -e
 
 # build
-npm run build
+pnpm build
 
 # navigate into the build output directory
 cd dist
@@ -21,6 +21,6 @@ git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
 # git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
-git push -f https://github.com/throuz/mrctech-pretest.git main:gh-pages
+git push -f https://github.com/throuz/mrctech-pretest.git master:gh-pages
 
 cd -
