@@ -1,0 +1,19 @@
+#categories {
+  position: fixed;
+  top: 45%;
+  left: 1%;
+  text-align: center;
+}
+
+.category {
+  font-size: 20px;
+  color: #fff;
+  padding: 10px;
+  margin-bottom: 5px;
+  background: #666;
+  cursor: pointer;
+}
+
+.category:hover {
+  background: #333;
+}

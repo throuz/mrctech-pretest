@@ -1,10 +1,11 @@
 import "./App.css";
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Advertise from "./components/Advertise";
 import Countdown from "./components/Countdown";
 import ProductList from "./components/ProductList";
-import products from "./data.json";
+import Categories from "./components/Categories";
+import data from "./data.json";
 
 function App() {
   // const [error, setError] = useState(null);
@@ -48,14 +49,19 @@ function App() {
   //     </div>
   //   );
   // }
+  const [products, setProducts] = useState(data);
 
   const images = [];
-  for (let i = 0; i < products.length; i++) {
+  for (let i = 0; i < data.length; i++) {
     if (i > 9) {
       break;
     }
-    images.push(products[i].image);
+    images.push(data[i].image);
   }
+
+  const categoryFilter = (category) => {
+    setProducts(data.filter((product) => product.category === category));
+  };
 
   return (
     <div className="App">
@@ -63,6 +69,7 @@ function App() {
       <Advertise images={images}></Advertise>
       <Countdown></Countdown>
       <ProductList products={products}></ProductList>
+      <Categories categoryFilter={categoryFilter}></Categories>
     </div>
   );
 }
